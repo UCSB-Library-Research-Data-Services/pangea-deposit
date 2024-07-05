@@ -4,10 +4,14 @@ format: html
 ---
 
 ```{r}
+#| warning: false 
+#| message: false
+  
 library(tidyverse)
 library(readxl)
 library(janitor)
 ```
+
 # Paths & files
 
 ```{r}
@@ -17,6 +21,10 @@ path_output <- file.path("Data", "Processed")
 
 # Get the filnames for Excel files only (avoiding temporary open file)
 file_names <- list.files(path_raw, pattern = "^[^~]*xlsx")
+
+# Look-up table for the final column names
+lut_names <- read_csv("lut_names.csv")
+
 file_name <- file_names[3]  # temporary will be replaced by the loop
 ```
 
@@ -25,26 +33,50 @@ file_name <- file_names[3]  # temporary will be replaced by the loop
 ## Import data from Excel
 
 ```{r}
-# get the column names
+
+
+# get the column names & clean
 cnames <- read_excel(file.path(path_raw, file_name), 
                      sheet = "14C.data", 
                      skip = 2, 
                      n_max = 0) %>% 
-    names()
+  janitor::clean_names() %>%
+  names() %>%
+  gsub("_(cm)", "", .)     #remove the cm
 
-# get the units
-units <- read_excel(file.path(path_raw, file_name), 
-                    sheet = "14C.data", 
-                    skip = 3, 
-                    col_names = cnames,
-                    n_max = 1)
 
 # get the data
-datasheet <- read_excel(file.path(path_raw, file_name), 
+datasheet_raw <- read_excel(file.path(path_raw, file_name), 
                     sheet = "14C.data", 
                     skip = 4, 
-                    col_names = cnames
-                    )
+                    col_names = cnames, 
+                    na = c("NA", "-", "--","---", "----", "?", "", " ") # YOU WILL NEED TO ADD ANY OTHER PATTTERN YOU USED FOR NAs
+                    ) 
 
+
+  
 ```
+
+## Transform the data
+
+### Drop columns not listed for preservation
+
+```{r}
+datasheet <- datasheet_raw %>%
+  select(-c(material, `genus_species`, `pretreatment_method`, `dating_method`, `analysis_type`))
+```
+
+## Rename the columns with units
+
+I opted to remove title case and use `-` to separate the variable name and the units. This should make the file more easy to read with scripting languages such as R, Python & Matlab.
+
+
+
+```{r}
+names(datasheet) <- lut_names %>%
+  pull(normalized_name)
+```
+
+
+
 
