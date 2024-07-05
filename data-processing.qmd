@@ -8,24 +8,39 @@ library(tidyverse)
 library(readxl)
 library(janitor)
 ```
+# Paths & files
+
+```{r}
+path_raw <- file.path("Data", "Raw")
+
+path_output <- file.path("Data", "Processed")
+
+# Get the filnames for Excel files only (avoiding temporary open file)
+file_names <- list.files(path_raw, pattern = "^[^~]*xlsx")
+file_name <- file_names[3]  # temporary will be replaced by the loop
+```
+
 
 
 ## Import data from Excel
 
 ```{r}
-cnames <- read_excel("Data/Raw/VER99G12.xlsx", 
+# get the column names
+cnames <- read_excel(file.path(path_raw, file_name), 
                      sheet = "14C.data", 
                      skip = 2, 
                      n_max = 0) %>% 
     names()
 
-units <- read_excel("Data/Raw/VER99G12.xlsx", 
+# get the units
+units <- read_excel(file.path(path_raw, file_name), 
                     sheet = "14C.data", 
                     skip = 3, 
                     col_names = cnames,
                     n_max = 1)
 
-datasheet <- read_excel("Data/Raw/VER99G12.xlsx", 
+# get the data
+datasheet <- read_excel(file.path(path_raw, file_name), 
                     sheet = "14C.data", 
                     skip = 4, 
                     col_names = cnames
