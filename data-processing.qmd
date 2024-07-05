@@ -36,7 +36,7 @@ lut_names <- read_csv("lut_names.csv")
 
 for (file_name in file_names) {
   
-  sprintf("Processing file %s", file_name)
+  message(sprintf("Processing file %s", file_name))
   
   # get the column names & clean
   cnames <- read_excel(file.path(path_raw, file_name), 
@@ -68,7 +68,7 @@ names(datasheet) <- lut_names %>%
 
 # Save file
 file_output <- file.path(path_output, paste0(tools::file_path_sans_ext(file_name), "_pangea.csv"))
-sprintf("Writing file %s", file_output)
+message(sprintf("Writing file %s", file_output))
 write_csv(datasheet,file_output)
 
 }
@@ -90,6 +90,7 @@ write_csv(datasheet,file_output)
 all_together <- list.files(path_output, pattern = "pangea.csv", full.names = TRUE) %>%
     map_dfr(read_csv) 
 
+# write file
 write_csv(all_together, file.path("Data", "all_data_pangea.csv"))
 ```
 
