@@ -10,6 +10,7 @@ format: html
 library(tidyverse)
 library(readxl)
 library(janitor)
+library(purrr)
 ```
 
 # Paths & files
@@ -25,56 +26,71 @@ file_names <- list.files(path_raw, pattern = "^[^~]*xlsx")
 # Look-up table for the final column names
 lut_names <- read_csv("lut_names.csv")
 
-file_name <- file_names[3]  # temporary will be replaced by the loop
+# file_name <- file_names[3]  # temporary will be replaced by the loop
 ```
 
 
-
-## Import data from Excel
+## File processing
 
 ```{r}
 
-
-# get the column names & clean
-cnames <- read_excel(file.path(path_raw, file_name), 
-                     sheet = "14C.data", 
-                     skip = 2, 
-                     n_max = 0) %>% 
-  janitor::clean_names() %>%
-  names() %>%
-  gsub("_(cm)", "", .)     #remove the cm
-
-
-# get the data
-datasheet_raw <- read_excel(file.path(path_raw, file_name), 
-                    sheet = "14C.data", 
-                    skip = 4, 
-                    col_names = cnames, 
-                    na = c("NA", "-", "--","---", "----", "?", "", " ") # YOU WILL NEED TO ADD ANY OTHER PATTTERN YOU USED FOR NAs
-                    ) 
-
-
+for (file_name in file_names) {
   
-```
+  sprintf("Processing file %s", file_name)
+  
+  # get the column names & clean
+  cnames <- read_excel(file.path(path_raw, file_name), 
+                       sheet = "14C.data", 
+                       skip = 2, 
+                       n_max = 0) %>% 
+    janitor::clean_names() %>%
+    names() %>%
+    gsub("_(cm)", "", .)     #remove the cm
+  
+  # get the data
+  datasheet_raw <- read_excel(file.path(path_raw, file_name), 
+                      sheet = "14C.data", 
+                      range = cell_limits(c(5,1), c(NA,21)), # to handle when last column has no values
+                      col_names = cnames, 
+                      na = c("NA", "-", "--","---", "----", "?", "", " ") # YOU WILL NEED TO ADD ANY OTHER PATTTERN YOU USED FOR NAs
+                      )
 
-## Transform the data
-
-### Drop columns not listed for preservation
-
-```{r}
+# Drop columns not listed for preservation
 datasheet <- datasheet_raw %>%
-  select(-c(material, `genus_species`, `pretreatment_method`, `dating_method`, `analysis_type`))
-```
+  select(-c(field, `genus_species`, `pretreatment_method`, `dating_method`, `analysis_type`))
+
+# Sanity check for coumn matching
+stopifnot(ncol(datasheet)==nrow(lut_names))
 
 ## Rename the columns with units
-
-I opted to remove title case and use `-` to separate the variable name and the units. This should make the file more easy to read with scripting languages such as R, Python & Matlab.
-
-
-
-```{r}
 names(datasheet) <- lut_names %>%
   pull(normalized_name)
+
+# Save file
+file_output <- file.path(path_output, paste0(tools::file_path_sans_ext(file_name), "_pangea.csv"))
+sprintf("Writing file %s", file_output)
+write.csv(datasheet,file_output)
+
+}
+```
+
+## Notes
+
+- Double-check I covered all the options you used for NA and add any missing ones
+- I opted to remove title case and use `-` to separate the variable name and the units. This should make the file more easy to read with scripting languages such as R, Python & Matlab.
+- I developed a look-up table to store the column names conversion. You can edit it if you want to make changes
+
+
+
+
+## Combine all the files in one
+
+```{r}
+# Get the filnames for Excel files only (avoiding temporary open file)
+all_together <- list.files(path_output, pattern = "pangea.csv", full.names = TRUE) %>%
+    map_dfr(read_csv)
+
+write_csv(all_together, file.path(path_output, "all_data_pangea.csv"))
 ```
 
 
