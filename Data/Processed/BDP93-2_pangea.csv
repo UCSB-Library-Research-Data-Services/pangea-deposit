@@ -1,0 +1,32 @@
+lab_code,section_code,top_depth-cm,bottom_depth-cm,middle_depth-cm,corrected_depth-cm,thickness-cm,material,radiocarbon_age-14c_yr_bp,radiocarbon_age_error-14c_yr_bp,d13c_method,d13c-permille_pdb,d13c_error-permille_pdb,carbon_yield-percent,reference,comments
+OS-02514,932-C1A,NA,NA,0.8,NA,NA,TOC,2000,45,Standard Mass Spectrometry,-26.96,NA,NA,"Colman et al., 1996",NA
+OS-02515,932-C2A,NA,NA,30.75,NA,NA,TOC,3080,40,Standard Mass Spectrometry,-27.43,NA,NA,"Colman et al., 1996",NA
+OS-02516,932-C3A,NA,NA,61.25,NA,NA,TOC,3800,45,Standard Mass Spectrometry,-27.41,NA,NA,"Colman et al., 1996",NA
+OS-02517,932-C4A,NA,NA,90.35,NA,NA,TOC,5530,70,Standard Mass Spectrometry,-28.61,NA,NA,"Colman et al., 1996",NA
+OS-02518,932-C5A,NA,NA,130.5,NA,NA,TOC,8020,45,Standard Mass Spectrometry,-28.3,NA,NA,"Colman et al., 1996",NA
+OS-02519,932-C6A,NA,NA,207,NA,NA,TOC,12400,80,Standard Mass Spectrometry,-27.56,NA,NA,"Colman et al., 1996",NA
+OS-02520,932-C7A,NA,NA,238.2,NA,NA,TOC,13750,75,Standard Mass Spectrometry,-28.14,NA,NA,"Colman et al., 1996",NA
+OS-02556,932-C8A,NA,NA,271,NA,NA,TOC,17350,100,Standard Mass Spectrometry,-26.18,NA,NA,"Colman et al., 1996",NA
+OS-02521,932-C9A,NA,NA,300.8,NA,NA,TOC,17500,120,Standard Mass Spectrometry,-25.82,NA,NA,"Colman et al., 1996",NA
+OS-02522,932-C10A,NA,NA,333.4,NA,NA,TOC,20900,140,Standard Mass Spectrometry,-25.88,NA,NA,"Colman et al., 1996",NA
+OS-02523,932-C11A,NA,NA,378.9,NA,NA,TOC,23000,160,Standard Mass Spectrometry,-26.79,NA,NA,"Colman et al., 1996",NA
+OS-02524,932-C12A,NA,NA,410.7,NA,NA,TOC,22300,120,Standard Mass Spectrometry,-27.03,NA,NA,"Colman et al., 1996",NA
+OS-02525,932-C13A,NA,NA,442.1,NA,NA,TOC,23500,140,Standard Mass Spectrometry,-26.82,NA,NA,"Colman et al., 1996",NA
+OS-02526,932-C14A,NA,NA,474.1,NA,NA,TOC,24800,170,Standard Mass Spectrometry,-26.48,NA,NA,"Colman et al., 1996",NA
+OS-02527,932-C15A,NA,NA,507.9,NA,NA,TOC,24100,140,Estimated,-27,NA,NA,"Colman et al., 1996",NA
+OS-02554,932-C16A,NA,NA,573.7,NA,NA,TOC,30500,280,Standard Mass Spectrometry,-27.02,NA,NA,"Colman et al., 1996",NA
+OS-02555,932-C17A,NA,NA,633.8,NA,NA,TOC,33900,330,Standard Mass Spectrometry,-27.55,NA,NA,"Colman et al., 1996",NA
+NUTA-3297,BDP93-2-4,45,46.7,45.85,NA,1.7,TOC,3800,70,NA,-26.1,NA,1.94,"Nakamura et al., 2003",NA
+NUTA-3298,BDP93-2-6,74.5,76.5,75.5,NA,2,TOC,4370,70,NA,-27.84,NA,3.06,"Nakamura et al., 2003",NA
+NUTA-3307,BDP93-2-10,189.8,191,190.4,NA,1.2,TOC,10900,80,NA,-29.38,NA,2.29,"Nakamura et al., 2003",NA
+NUTA-3308,BDP93-2-12,221.8,223.5,222.65,NA,1.7,TOC,13670,100,NA,-29.61,NA,1.27,"Nakamura et al., 2003",NA
+NUTA-3309,BDP93-2-14,254.1,256.1,255.10000000000002,NA,2,TOC,15500,100,NA,-27.93,NA,0.73,"Nakamura et al., 2003",NA
+NUTA-3319,BDP93-2-16,284.9,286.6,285.75,NA,1.7,TOC,18950,100,NA,-25.24,NA,0.35,"Nakamura et al., 2003",NA
+NUTA-3302,BDP93-2-18,316.4,318.4,317.4,NA,2,TOC,19780,190,NA,-25.04,NA,0.45,"Nakamura et al., 2003",NA
+NUTA-3303,BDP93-2-18',316.4,318.4,317.4,NA,2,TOC,20550,130,NA,-25.04,NA,0.45,"Nakamura et al., 2003",NA
+NUTA-3320,BDP93-2-20,362.3,363.8,363.05,NA,1.5,TOC,21440,130,NA,-27.12,NA,0.59,"Nakamura et al., 2003",NA
+NUTA-3304,BDP93-2-24,424.5,426.2,425.35,NA,1.7,TOC,25780,170,NA,-26.06,NA,0.59,"Nakamura et al., 2003",NA
+NUTA-3321,BDP93-2-26,456,457.9,456.95,NA,1.9,TOC,26600,170,NA,-26.79,NA,0.7,"Nakamura et al., 2003",NA
+NUTA-3305,BDP93-2-28,489.4,491,490.2,NA,1.6,TOC,28200,210,NA,-26.28,NA,0.79,"Nakamura et al., 2003",NA
+NUTA-3669,BDP93-2-32,603,605,604,NA,2,TOC,36360,360,NA,-26.26,NA,0.77,"Nakamura et al., 2003",NA
+NUTA-3670,BDP93-2-34,663.3,665.4,664.3499999999999,NA,2.1,TOC,38710,350,NA,-25.53,NA,0.49,"Nakamura et al., 2003",NA

@@ -1,0 +1,21 @@
+lab_code,section_code,top_depth-cm,bottom_depth-cm,middle_depth-cm,corrected_depth-cm,thickness-cm,material,radiocarbon_age-14c_yr_bp,radiocarbon_age_error-14c_yr_bp,d13c_method,d13c-permille_pdb,d13c_error-permille_pdb,carbon_yield-percent,reference,comments
+GdA-1370,NA,0,4,2,NA,4,TOC,1510,30,AMS,-24.4,0.7,1.7,"Piotrowska, personal communication",NA
+GdA-1371,NA,18,22,20,NA,4,TOC,4680,40,AMS,-30.5,0.1,1.24,"Piotrowska, personal communication",NA
+GdA-1372,NA,24,28,26,NA,4,TOC,5000,35,AMS,-30.3,0.1,1.38,"Piotrowska, personal communication",NA
+GdA-1373,NA,32,36,34,NA,4,TOC,6130,45,AMS,-32.2,0.2,3.03,"Piotrowska, personal communication",NA
+GdA-1374,NA,39,43,41,NA,4,TOC,7260,45,AMS,-34.6,1.8,2.42,"Piotrowska, personal communication",NA
+GdA-1375,NA,54,58,56,NA,4,TOC,8900,45,AMS,-34.5,0.2,2.1,"Piotrowska, personal communication",NA
+GdA-1376,NA,60,64,62,NA,4,TOC,9380,55,AMS,-32.7,0.1,2.28,"Piotrowska, personal communication",NA
+GdA-1377,NA,70,76,73,NA,6,TOC,10840,60,AMS,-31.6,0.1,1.74,"Piotrowska, personal communication",NA
+GdA-1378,NA,78,84,81,NA,6,TOC,12170,90,AMS,-30.8,0.2,0.56,"Piotrowska, personal communication",NA
+GdA-1379,NA,86,92,89,NA,6,TOC,11920,60,AMS,-33.7,0.2,1.36,"Piotrowska, personal communication",NA
+GdA-247,LBF-AMS-1,0,4,2,NA,4,Pollen Concentrate,1235,25,AMS,-25.2,0.3,89,"Piotrowska et al., 2004; Demske et al., 2005",NA
+GdA-248,LBF-AMS-2,18,22,20,NA,4,Pollen Concentrate,4060,30,AMS,-22.8,0.3,75,"Piotrowska et al., 2004; Demske et al., 2005",NA
+GdA-249,LBF-AMS-3,24,28,26,NA,4,Pollen Concentrate,4955,30,AMS,-25,0.2,77,"Piotrowska et al., 2004; Demske et al., 2005",NA
+GdA-250,LBF-AMS-4,32,36,34,NA,4,Pollen Concentrate,5335,30,AMS,-24.5,0.2,73,"Piotrowska et al., 2004; Demske et al., 2005",NA
+GdA-251,LBF-AMS-5,39,43,41,NA,4,Pollen Concentrate,6630,35,AMS,-26.2,0.4,53,"Piotrowska et al., 2004; Demske et al., 2005",NA
+GdA-252,LBF-AMS-6,54,58,56,NA,4,Pollen Concentrate,8570,40,AMS,-25.3,0.3,69,"Piotrowska et al., 2004; Demske et al., 2005",NA
+GdA-253,LBF-AMS-7,60,64,62,NA,4,Pollen Concentrate,8690,50,AMS,-28.7,0.9,40,"Piotrowska et al., 2004; Demske et al., 2005",NA
+GdA-257,LBF-AMS-8,70,76,73,NA,6,Pollen Concentrate,10250,50,AMS,-24.2,0.8,43,"Piotrowska et al., 2004; Demske et al., 2005",NA
+GdA-258,LBF-AMS-9,78,84,81,NA,6,Pollen Concentrate,11090,80,AMS,-47,2.1,80,"Piotrowska et al., 2004; Demske et al., 2005",NA
+GdA-259,LBF-AMS-10,86,92,89,NA,6,Pollen Concentrate,11960,50,AMS,-26.5,0.6,59,"Piotrowska et al., 2004; Demske et al., 2005",NA
