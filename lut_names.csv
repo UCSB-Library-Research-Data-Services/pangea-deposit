@@ -1,0 +1,17 @@
+﻿original_name,provided_name,normalized_name
+Lab Code,Lab Code,lab_code
+Section Code,Section Code,section_code
+Top Depth,Top Depth [cm],top_depth-cm
+Bottom Depth,Bottom Depth [cm],bottom_depth-cm
+Middle Depth,Middle Depth [cm],middle_depth-cm
+Corrected Depth (cm),Corrected Depth [cm],corrected_depth-cm
+Thickness,Thickness [cm],thickness-cm
+Material,Material,material
+Value,Radiocarbon Age [14C yr BP],radiocarbon_age-14c_yr_bp
+Error,Radiocarbon Age Error [± 14C yr BP],radiocarbon_age_error-14c_yr_bp
+d13C method,d13C Method,d13c_method
+d13C,d13C [‰ PDB],d13c-permille_pdb
+d13C error,d13C Error [‰ PDB],d13c_error-permille_pdb
+Carbon Yield,Carbon Yield [%],carbon_yield-percent
+Reference,Reference,reference
+Comments,Comments,comments
