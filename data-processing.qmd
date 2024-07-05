@@ -69,7 +69,7 @@ names(datasheet) <- lut_names %>%
 # Save file
 file_output <- file.path(path_output, paste0(tools::file_path_sans_ext(file_name), "_pangea.csv"))
 sprintf("Writing file %s", file_output)
-write.csv(datasheet,file_output)
+write_csv(datasheet,file_output)
 
 }
 ```
@@ -88,9 +88,9 @@ write.csv(datasheet,file_output)
 ```{r}
 # Get the filnames for Excel files only (avoiding temporary open file)
 all_together <- list.files(path_output, pattern = "pangea.csv", full.names = TRUE) %>%
-    map_dfr(read_csv)
+    map_dfr(read_csv) 
 
-write_csv(all_together, file.path(path_output, "all_data_pangea.csv"))
+write_csv(all_together, file.path("Data", "all_data_pangea.csv"))
 ```
 
 
