@@ -1,0 +1,35 @@
+---
+title: "data hamrmonization"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(janitor)
+```
+
+
+## Import data from Excel
+
+```{r}
+cnames <- read_excel("Data/Raw/VER99G12.xlsx", 
+                     sheet = "14C.data", 
+                     skip = 2, 
+                     n_max = 0) %>% 
+    names()
+
+units <- read_excel("Data/Raw/VER99G12.xlsx", 
+                    sheet = "14C.data", 
+                    skip = 3, 
+                    col_names = cnames,
+                    n_max = 1)
+
+datasheet <- read_excel("Data/Raw/VER99G12.xlsx", 
+                    sheet = "14C.data", 
+                    skip = 4, 
+                    col_names = cnames
+                    )
+
+```
+
